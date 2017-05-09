@@ -27,10 +27,8 @@ deployment:
       - mkdir -p docs
       - rm -rf docs/*
       - hugo -s ./site -d ../docs/
-      - ls -ltr ./site
-      - ls -ltr ./docs
+      - cp CNAME docs/
       - git add docs
       - git commit --message "Generated site on $(date)"
       - git push origin master
-      - cd ..
       
