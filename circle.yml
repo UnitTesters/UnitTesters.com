@@ -14,21 +14,18 @@ dependencies:
     - wget -O ~/tmp/hugo_0.20.7_Linux-64bit.tar.gz https://github.com/spf13/hugo/releases/download/v0.20.7/hugo_0.20.7_Linux-64bit.tar.gz
     - cd ~/tmp && tar xvzf ~/tmp/hugo_0.20.7_Linux-64bit.tar.gz
     - mv ~/tmp/hugo ~/bin/hugo
-    - git clone https://github.com/UnitTesters/unittesterscom site
 
 test:
   override:
-    - hugo -s site -v
+    - hugo -v
 
 deployment:
   master:
     branch: master
     commands:
-      - mkdir -p docs
       - rm -rf docs/*
-      - hugo -s ./site -d ../docs/
+      - hugo -d ../docs/
       - cp CNAME docs/
       - git add docs
       - git commit --message "Generated site on $(date)"
       - git push origin master
-      
