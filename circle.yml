@@ -24,7 +24,7 @@ deployment:
   master:
     branch: master
     commands:
-      - mkdir -P docs
+      - mkdir -p docs
       - rm -rf docs/*
       - hugo -s site -d docs
       - git add docs
