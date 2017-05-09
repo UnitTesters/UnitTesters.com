@@ -18,16 +18,16 @@ dependencies:
 
 test:
   override:
-    - hugo -v
+    - hugo -s site -v
 
 deployment:
   master:
     branch: master
     commands:
+      - mkdir -P docs
       - rm -rf docs/*
       - hugo -s site -d docs
-      - cd docs
-      - git add -A .
+      - git add docs
       - git commit --message "Generated site on $(date)"
       - git push origin master
       - cd ..
