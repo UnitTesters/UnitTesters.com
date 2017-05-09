@@ -26,7 +26,8 @@ deployment:
     commands:
       - mkdir -p docs
       - rm -rf docs/*
-      - hugo -s site -d docs
+      - hugo -s ./site -d ./docs/
+      - ls -ltr
       - git add docs
       - git commit --message "Generated site on $(date)"
       - git push origin master
