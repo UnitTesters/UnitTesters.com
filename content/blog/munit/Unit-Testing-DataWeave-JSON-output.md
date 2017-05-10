@@ -9,7 +9,7 @@ featuredpath = ""
 linktitle = ""
 title = "Unit Testing DataWeave JSON output"
 type = "post"
-url = "/blog/2016/07/20/Unit-Testing-DataWeave-JSON-Output-with-MUnit/"
+url = "/blog/2016/09/27/Unit-Testing-DataWeave-JSON-Output-with-MUnit/"
 
 +++
 In the [previous post](https://unittesters.com/blog/2016/07/20/Unit-Testing-Mule-DataWeave-Scripts-with-MUnit/) about unit testing DataWeave scripts with MUnit and JUnit, I showed you how to verify Java and CSV output of DataWeave scripts. We also looked at some error troubleshooting in dataweave scripts.
