@@ -2,7 +2,7 @@ checkout:
   post:
     - git submodule sync
     - git submodule update --init --recursive
-    - git pull --recurse-submodules
+    - git submodule update --recursive --remote
 
 machine:
   pre:
