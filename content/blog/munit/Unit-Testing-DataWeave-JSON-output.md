@@ -2,7 +2,7 @@
 author = "Manik Magar"
 categories = ["MUnit"]
 date = "2016-09-27T14:20:20-04:00"
-description = "Often we generate JSON using DataWeave. Let's test our script."
+description = "Often we generate JSON using DataWeave. What about testing it?"
 featured = ""
 featuredalt = ""
 featuredpath = ""
