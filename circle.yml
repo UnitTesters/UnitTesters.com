@@ -25,7 +25,7 @@ deployment:
     branch: master
     commands:
       - rm -rf docs/*
-      - hugo -d ../docs/
+      - hugo -d docs
       - cp CNAME docs/
       - git add docs
       - git commit --message "Generated site on $(date)"
