@@ -5,7 +5,7 @@ theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
 paginate = 3
 disqusShortname = "unittesters"
-googleAnalytics = ""
+googleAnalytics = "UA-78784632-1"
 DisablePathToLower = true
 publishDir = "docs"
 
