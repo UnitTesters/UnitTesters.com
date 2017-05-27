@@ -11,9 +11,18 @@
     
     
     <item>
+      <title>JUnit</title>
+      <link>https://unittesters.com/categories/JUnit/</link>
+      <pubDate>Fri, 26 May 2017 19:00:00 -0400</pubDate>
+      
+      <guid>https://unittesters.com/categories/JUnit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>MUnit</title>
       <link>https://unittesters.com/categories/MUnit/</link>
-      <pubDate>Tue, 27 Sep 2016 14:20:20 -0400</pubDate>
+      <pubDate>Fri, 26 May 2017 19:00:00 -0400</pubDate>
       
       <guid>https://unittesters.com/categories/MUnit/</guid>
       <description></description>

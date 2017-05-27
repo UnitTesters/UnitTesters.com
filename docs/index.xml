@@ -6,10 +6,21 @@
     <description>Recent content on UnitTesters.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Sep 2016 14:20:20 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 26 May 2017 19:00:00 -0400</lastBuildDate>
     
 	<atom:link href="https://unittesters.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mule SMTP testing with MUnit MailServer Mock</title>
+      <link>https://unittesters.com/blog/2017/05/mule-smtp-testing-with-munit-mailserver/</link>
+      <pubDate>Fri, 26 May 2017 19:00:00 -0400</pubDate>
+      
+      <guid>https://unittesters.com/blog/2017/05/mule-smtp-testing-with-munit-mailserver/</guid>
+      <description>Testing Mule SMTP using MUnit MailServer Mock We often use Mule SMTP connector in flows. But how to make sure that emails gets sent as expected?
+MUnit provides MailServer that we can use to mock real SMTP server and verify the mails sent by SMTP connector. Lets see how we can write munit test case for below subflow:
+&amp;lt;context:property-placeholder location=&amp;quot;munit-mailserver-demo.properties&amp;quot; /&amp;gt; &amp;lt;sub-flow name=&amp;quot;subflow-mail-sender&amp;quot;&amp;gt; &amp;lt;set-variable variableName=&amp;quot;emailSubject&amp;quot; value=&amp;quot;#[&#39;Welcome to UT&#39;]&amp;quot; doc:name=&amp;quot;Set Subject&amp;quot;/&amp;gt; &amp;lt;smtp:outbound-endpoint host=&amp;quot;${email.</description>
+    </item>
     
     <item>
       <title>Unit Testing DataWeave JSON output</title>

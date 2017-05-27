@@ -11,7 +11,7 @@
 <html>
     <head>
         
-            <title>Pages - UnitTesters.com</title>
+            <title>AssertJ - UnitTesters.com</title>
         
 
         <meta charset="utf-8" />
@@ -42,14 +42,14 @@
         
 
         
-        <meta property="og:title" content="Pages" />
+        <meta property="og:title" content="AssertJ" />
 <meta property="og:description" content="Unit Testing blog with examples, tutorials for JUnit, MUnit and other unit testing frameworks." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://unittesters.com/page/" />
+<meta property="og:url" content="https://unittesters.com/tags/AssertJ/" />
 
 
 
-<meta property="og:updated_time" content="2016-07-20T13:49:51-04:00"/>
+<meta property="og:updated_time" content="2017-05-26T19:00:00-04:00"/>
 
 
 
@@ -61,7 +61,7 @@
 
 
         
-<meta itemprop="name" content="Pages">
+<meta itemprop="name" content="AssertJ">
 <meta itemprop="description" content="Unit Testing blog with examples, tutorials for JUnit, MUnit and other unit testing frameworks.">
 
 
@@ -280,10 +280,10 @@ ga('send', 'pageview');
     <header>
     <div class="title">
         
-            <h2><a href="https://unittesters.com/blog/2016/07/20/Unit-Testing-Mule-DataWeave-Scripts-with-MUnit/">Unit Testing Mule DataWeave Scripts</a></h2>
+            <h2><a href="https://unittesters.com/blog/2017/05/mule-smtp-testing-with-munit-mailserver/">Mule SMTP testing with MUnit MailServer Mock</a></h2>
         
         
-            <p>Mule DataWeave script can do complex transformations and so must be unit tested to ensure expected results. Let&#39;s see how to do it.</p>
+            <p>Very often we use Mule SMTP connector in flows. How to ensure it is sending emails as expected? Let&#39;s write a test case for it.</p>
         
     </div>
     <div class="meta">
@@ -292,11 +292,11 @@ ga('send', 'pageview');
         
 
         <time class="published"
-            datetime='2016-07-20'>
-            July 20, 2016</time>
+            datetime='2017-05-26'>
+            May 26, 2017</time>
         <span class="author">Manik Magar</span>
         
-            <p>7 minute read</p>
+            <p>4 minute read</p>
         
         
     </div>
@@ -304,12 +304,86 @@ ga('send', 'pageview');
 
     
 
-    <p>DataWeave is a powerful transformation language introduced with Mule Enterprise Edition 3.7. It allows you to transform data from one format to another and supports CSV, XML, JSON, Flat/Fixed Width (v3.8+) &amp; Java. You can look at these DataWeave Examples to see it in action.
-Like any other code of programming world, it is always a good idea to unit test the DataWeave script you write. In this post, we will see how we can unit test the DataWeave code.</p>
+    <p>Testing Mule SMTP using MUnit MailServer Mock We often use Mule SMTP connector in flows. But how to make sure that emails gets sent as expected?
+MUnit provides MailServer that we can use to mock real SMTP server and verify the mails sent by SMTP connector. Lets see how we can write munit test case for below subflow:
+&lt;context:property-placeholder location=&quot;munit-mailserver-demo.properties&quot; /&gt; &lt;sub-flow name=&quot;subflow-mail-sender&quot;&gt; &lt;set-variable variableName=&quot;emailSubject&quot; value=&quot;#[&lsquo;Welcome to UT&rsquo;]&quot; doc:name=&quot;Set Subject&quot;/&gt; &lt;smtp:outbound-endpoint host=&quot;${email.</p>
 
     <footer>
         <ul class="actions">
-            <li><a href="https://unittesters.com/blog/2016/07/20/Unit-Testing-Mule-DataWeave-Scripts-with-MUnit/" class="button big">Continue Reading</a></li>
+            <li><a href="https://unittesters.com/blog/2017/05/mule-smtp-testing-with-munit-mailserver/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-sitemap">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/MUnit'>MUnit</a></li>
+    
+        <li><a href='/categories/JUnit'>JUnit</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="https://unittesters.com/blog/2016/09/27/Unit-Testing-DataWeave-JSON-Output-with-MUnit/">Unit Testing DataWeave JSON output</a></h2>
+        
+        
+            <p>Often we generate JSON using DataWeave. What about testing it?</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2016-09-27'>
+            September 27, 2016</time>
+        <span class="author">Manik Magar</span>
+        
+            <p>2 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>In the previous post about unit testing DataWeave scripts with MUnit and JUnit, I showed you how to verify Java and CSV output of DataWeave scripts. We also looked at some error troubleshooting in dataweave scripts.
+Now, lets look at DataWeave with JSON output and how we can test the content of our output with MUnit and JUnit.
+DataWeave Script Let&rsquo;s use the same DataWeave script from our previous post and change the output type to application/json.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="https://unittesters.com/blog/2016/09/27/Unit-Testing-DataWeave-JSON-Output-with-MUnit/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -350,7 +424,7 @@ Like any other code of programming world, it is always a good idea to unit test 
     <header>
     <div class="title">
         
-            <h2><a href="https://unittesters.com/blog/mule-munit-testing-variables-properties/">Mule MUnit testing with variables and properties</a></h2>
+            <h2><a href="https://unittesters.com/blog/2016/07/24/overriding-properties-in-munit-xml-java-for-testing/">Overriding Properties in MUnit XML and Java for testing</a></h2>
         
         
     </div>
@@ -360,44 +434,24 @@ Like any other code of programming world, it is always a good idea to unit test 
         
 
         <time class="published"
-            datetime='2016-05-30'>
-            May 30, 2016</time>
+            datetime='2016-07-24'>
+            July 24, 2016</time>
         <span class="author">Manik Magar</span>
         
-            <p>3 minute read</p>
+            <p>4 minute read</p>
         
         
     </div>
 </header>
 
     
-    
 
-    
-        
-        
-
-
-
-
-    
-
-
-        
-
-        <a href="https://unittesters.com/blog/mule-munit-testing-variables-properties/" class="image featured">
-            <img src="/blog/blog-files/Mule_Munit_Flow_1.png" alt="Test" />
-        </a>
-    
-
-
-    <p>Flow Variables, Session Variables, Inbound/Outbound properties are very common in mule flows. Mule MUnit framework makes it very easy to unit test any Mule Flow and subflows. In this post, we will see how we can unit test our flows involving variables and properties.
-Let’s consider a simple mule flow that reads a file and then sets a flow variable and session variable.
-&lt;flow name=&quot;SampleMuleFlow&quot;&gt; &lt;file:inbound-endpoint path=&quot;input&quot; responseTimeout=&quot;10000&quot; doc:name=&quot;File&quot;/&gt; &lt;set-variable variableName=&quot;fileName&quot; value=&quot;#[message.</p>
+    <p>It is very common for any mule application to use external properties files. In this post, we will see how we can override properties values for testing. We will also cover how we can write to temporary folder during munit test, disable connector mocking and asserting file existence.
+For demonstration purpose, we will have a flow that uses DataWeave to convert xml file into csv and writes to an output folder using file:outbound-endpoint.</p>
 
     <footer>
         <ul class="actions">
-            <li><a href="https://unittesters.com/blog/mule-munit-testing-variables-properties/" class="button big">Continue Reading</a></li>
+            <li><a href="https://unittesters.com/blog/2016/07/24/overriding-properties-in-munit-xml-java-for-testing/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -427,92 +481,6 @@ Let’s consider a simple mule flow that reads a file and then sets a flow varia
     
     
         <li><a href='/categories/MUnit'>MUnit</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="https://unittesters.com/blog/what-is-unit-testing/">What is Unit Testing?</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2016-05-21'>
-            May 21, 2016</time>
-        <span class="author">Manik Magar</span>
-        
-            <p>1 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-    
-
-    
-        
-        
-
-
-
-
-    
-
-
-        
-
-        <a href="https://unittesters.com/blog/what-is-unit-testing/" class="image featured">
-            <img src="/blog/blog-files/what-is-unit-testing.jpg" alt="" />
-        </a>
-    
-
-
-    <p>Unit Testing is a development process in which smallest unit of an application code is tested to ensure expected working. Kent Beck developed Extreme Programming (XP), a software development methodology and unit testing evolved as a part of that methodology. In programming context, an unit could be a class, method, function or other smallest segment of code that can be tested and verified in isolation.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="https://unittesters.com/blog/what-is-unit-testing/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-
-                    
-                        <i class="fa fa-sitemap">&nbsp;</i>
-                    
-
-                    
-                        Category
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='/categories/Unit-Testing'>Unit Testing</a></li>
     
 </ul>
 
@@ -524,12 +492,12 @@ Let’s consider a simple mule flow that reads a file and then sets a flow varia
         
 <ul class="actions pagination">
     
-        <li><a href="/page/"
-                class="button big previous">Previous Page</a></li>
+        <li><a href="#" class="disabled button big previous">Previous Page</a></li>
     
 
     
-        <li><a href="#" class="disabled button big next">Next Page</a></li>
+        <li><a href="/tags/AssertJ/page/2/"
+                class="button big next">Next Page</a></li>
     
 </ul>
 
@@ -553,7 +521,7 @@ Let’s consider a simple mule flow that reads a file and then sets a flow varia
             
             <ul class="icons">
                 
-                    <li><a href="https://unittesters.com/page/index.xml" type="application/rss+xml"
+                    <li><a href="https://unittesters.com/tags/AssertJ/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 
@@ -737,7 +705,7 @@ Let’s consider a simple mule flow that reads a file and then sets a flow varia
         <section id="footer">
             <ul class="icons">
                 
-                    <li><a href="https://unittesters.com/page/index.xml" type="application/rss+xml"
+                    <li><a href="https://unittesters.com/tags/AssertJ/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 

@@ -4,7 +4,7 @@
     <head>
         
             
-                <title>Unit Testing DataWeave JSON output</title>
+                <title>Mule SMTP testing with MUnit MailServer Mock</title>
             
         
 
@@ -32,7 +32,7 @@
             <meta name="author" content="Manik Magar">
         
         
-            <meta name="description" content="Often we generate JSON using DataWeave. What about testing it?">
+            <meta name="description" content="Very often we use Mule SMTP connector in flows. How to ensure it is sending emails as expected? Let&#39;s write a test case for it.">
         
 
         
@@ -41,20 +41,20 @@
 
 
 
-<meta name="twitter:text:title" content="Unit Testing DataWeave JSON output"/>
-<meta name="twitter:title" content="Unit Testing DataWeave JSON output"/>
-<meta name="twitter:description" content="Often we generate JSON using DataWeave. What about testing it?"/>
+<meta name="twitter:text:title" content="Mule SMTP testing with MUnit MailServer Mock"/>
+<meta name="twitter:title" content="Mule SMTP testing with MUnit MailServer Mock"/>
+<meta name="twitter:description" content="Very often we use Mule SMTP connector in flows. How to ensure it is sending emails as expected? Let&#39;s write a test case for it."/>
 <meta name="twitter:site" content="@unittesters"/>
 
-        <meta property="og:title" content="Unit Testing DataWeave JSON output" />
-<meta property="og:description" content="Often we generate JSON using DataWeave. What about testing it?" />
+        <meta property="og:title" content="Mule SMTP testing with MUnit MailServer Mock" />
+<meta property="og:description" content="Very often we use Mule SMTP connector in flows. How to ensure it is sending emails as expected? Let&#39;s write a test case for it." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://unittesters.com/blog/2016/09/27/Unit-Testing-DataWeave-JSON-Output-with-MUnit/" />
+<meta property="og:url" content="https://unittesters.com/blog/2017/05/mule-smtp-testing-with-munit-mailserver/" />
 
 
 
-<meta property="article:published_time" content="2016-09-27T14:20:20-04:00"/>
-<meta property="article:modified_time" content="2016-09-27T14:20:20-04:00"/>
+<meta property="article:published_time" content="2017-05-26T19:00:00-04:00"/>
+<meta property="article:modified_time" content="2017-05-26T19:00:00-04:00"/>
 
 
 
@@ -67,12 +67,12 @@
 
 
         
-<meta itemprop="name" content="Unit Testing DataWeave JSON output">
-<meta itemprop="description" content="Often we generate JSON using DataWeave. What about testing it?">
+<meta itemprop="name" content="Mule SMTP testing with MUnit MailServer Mock">
+<meta itemprop="description" content="Very often we use Mule SMTP connector in flows. How to ensure it is sending emails as expected? Let&#39;s write a test case for it.">
 
 
-<meta itemprop="dateModified" content="2016-09-27T14:20:20-04:00" />
-<meta itemprop="wordCount" content="411">
+<meta itemprop="dateModified" content="2017-05-26T19:00:00-04:00" />
+<meta itemprop="wordCount" content="704">
 
 
 
@@ -295,43 +295,43 @@ ga('send', 'pageview');
             
 
 
-<li><a href="//twitter.com/share?url=https%3a%2f%2funittesters.com%2fblog%2f2016%2f09%2f27%2fUnit-Testing-DataWeave-JSON-Output-with-MUnit%2f&text=Unit%20Testing%20DataWeave%20JSON%20output&via=unittesters" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=https%3a%2f%2funittesters.com%2fblog%2f2017%2f05%2fmule-smtp-testing-with-munit-mailserver%2f&text=Mule%20SMTP%20testing%20with%20MUnit%20MailServer%20Mock&via=unittesters" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=https%3a%2f%2funittesters.com%2fblog%2f2016%2f09%2f27%2fUnit-Testing-DataWeave-JSON-Output-with-MUnit%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=https%3a%2f%2funittesters.com%2fblog%2f2017%2f05%2fmule-smtp-testing-with-munit-mailserver%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2funittesters.com%2fblog%2f2016%2f09%2f27%2fUnit-Testing-DataWeave-JSON-Output-with-MUnit%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2funittesters.com%2fblog%2f2017%2f05%2fmule-smtp-testing-with-munit-mailserver%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=https%3a%2f%2funittesters.com%2fblog%2f2016%2f09%2f27%2fUnit-Testing-DataWeave-JSON-Output-with-MUnit%2f&title=Unit%20Testing%20DataWeave%20JSON%20output" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=https%3a%2f%2funittesters.com%2fblog%2f2017%2f05%2fmule-smtp-testing-with-munit-mailserver%2f&title=Mule%20SMTP%20testing%20with%20MUnit%20MailServer%20Mock" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2funittesters.com%2fblog%2f2016%2f09%2f27%2fUnit-Testing-DataWeave-JSON-Output-with-MUnit%2f&title=Unit%20Testing%20DataWeave%20JSON%20output" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2funittesters.com%2fblog%2f2017%2f05%2fmule-smtp-testing-with-munit-mailserver%2f&title=Mule%20SMTP%20testing%20with%20MUnit%20MailServer%20Mock" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2funittesters.com%2fblog%2f2016%2f09%2f27%2fUnit-Testing-DataWeave-JSON-Output-with-MUnit%2f&title=Unit%20Testing%20DataWeave%20JSON%20output" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2funittesters.com%2fblog%2f2017%2f05%2fmule-smtp-testing-with-munit-mailserver%2f&title=Mule%20SMTP%20testing%20with%20MUnit%20MailServer%20Mock" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Manik%20Magar&body=https%3a%2f%2funittesters.com%2fblog%2f2016%2f09%2f27%2fUnit-Testing-DataWeave-JSON-Output-with-MUnit%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Manik%20Magar&body=https%3a%2f%2funittesters.com%2fblog%2f2017%2f05%2fmule-smtp-testing-with-munit-mailserver%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -348,11 +348,11 @@ ga('send', 'pageview');
     <header>
     <div class="title">
         
-            <h1><a href="https://unittesters.com/blog/2016/09/27/Unit-Testing-DataWeave-JSON-Output-with-MUnit/">Unit Testing DataWeave JSON output</a></h1>
+            <h1><a href="https://unittesters.com/blog/2017/05/mule-smtp-testing-with-munit-mailserver/">Mule SMTP testing with MUnit MailServer Mock</a></h1>
             
         
         
-            <p>Often we generate JSON using DataWeave. What about testing it?</p>
+            <p>Very often we use Mule SMTP connector in flows. How to ensure it is sending emails as expected? Let&#39;s write a test case for it.</p>
         
     </div>
     <div class="meta">
@@ -361,11 +361,11 @@ ga('send', 'pageview');
         
 
         <time class="published"
-            datetime='2016-09-27'>
-            September 27, 2016</time>
+            datetime='2017-05-26'>
+            May 26, 2017</time>
         <span class="author">Manik Magar</span>
         
-            <p>2 minute read</p>
+            <p>4 minute read</p>
         
         
     </div>
@@ -377,43 +377,43 @@ ga('send', 'pageview');
             
 
 
-<li><a href="//twitter.com/share?url=https%3a%2f%2funittesters.com%2fblog%2f2016%2f09%2f27%2fUnit-Testing-DataWeave-JSON-Output-with-MUnit%2f&text=Unit%20Testing%20DataWeave%20JSON%20output&via=unittesters" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=https%3a%2f%2funittesters.com%2fblog%2f2017%2f05%2fmule-smtp-testing-with-munit-mailserver%2f&text=Mule%20SMTP%20testing%20with%20MUnit%20MailServer%20Mock&via=unittesters" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=https%3a%2f%2funittesters.com%2fblog%2f2016%2f09%2f27%2fUnit-Testing-DataWeave-JSON-Output-with-MUnit%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=https%3a%2f%2funittesters.com%2fblog%2f2017%2f05%2fmule-smtp-testing-with-munit-mailserver%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2funittesters.com%2fblog%2f2016%2f09%2f27%2fUnit-Testing-DataWeave-JSON-Output-with-MUnit%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2funittesters.com%2fblog%2f2017%2f05%2fmule-smtp-testing-with-munit-mailserver%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=https%3a%2f%2funittesters.com%2fblog%2f2016%2f09%2f27%2fUnit-Testing-DataWeave-JSON-Output-with-MUnit%2f&title=Unit%20Testing%20DataWeave%20JSON%20output" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=https%3a%2f%2funittesters.com%2fblog%2f2017%2f05%2fmule-smtp-testing-with-munit-mailserver%2f&title=Mule%20SMTP%20testing%20with%20MUnit%20MailServer%20Mock" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2funittesters.com%2fblog%2f2016%2f09%2f27%2fUnit-Testing-DataWeave-JSON-Output-with-MUnit%2f&title=Unit%20Testing%20DataWeave%20JSON%20output" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2funittesters.com%2fblog%2f2017%2f05%2fmule-smtp-testing-with-munit-mailserver%2f&title=Mule%20SMTP%20testing%20with%20MUnit%20MailServer%20Mock" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2funittesters.com%2fblog%2f2016%2f09%2f27%2fUnit-Testing-DataWeave-JSON-Output-with-MUnit%2f&title=Unit%20Testing%20DataWeave%20JSON%20output" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2funittesters.com%2fblog%2f2017%2f05%2fmule-smtp-testing-with-munit-mailserver%2f&title=Mule%20SMTP%20testing%20with%20MUnit%20MailServer%20Mock" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Manik%20Magar&body=https%3a%2f%2funittesters.com%2fblog%2f2016%2f09%2f27%2fUnit-Testing-DataWeave-JSON-Output-with-MUnit%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Manik%20Magar&body=https%3a%2f%2funittesters.com%2fblog%2f2017%2f05%2fmule-smtp-testing-with-munit-mailserver%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -425,114 +425,220 @@ ga('send', 'pageview');
     <div id="content">
         
 
-<p>In the <a href="https://unittesters.com/blog/2016/07/20/Unit-Testing-Mule-DataWeave-Scripts-with-MUnit/">previous post</a> about unit testing DataWeave scripts with MUnit and JUnit, I showed you how to verify Java and CSV output of DataWeave scripts. We also looked at some error troubleshooting in dataweave scripts.</p>
+<h1 id="testing-mule-smtp-using-munit-mailserver-mock">Testing Mule SMTP using MUnit MailServer Mock</h1>
 
-<p>Now, lets look at DataWeave with JSON output and how we can test the content of our output with MUnit and JUnit.</p>
+<p>We often use Mule SMTP connector in flows. But how to make sure that emails gets sent as expected?</p>
 
-<h2 id="dataweave-script">DataWeave Script</h2>
+<p>MUnit provides MailServer that we can use to mock real SMTP server and verify the mails sent by SMTP connector. Lets see how we can write munit test case for below subflow:</p>
 
-<p>Let&rsquo;s use the same DataWeave script from our <a href="https://unittesters.com/blog/2016/07/20/Unit-Testing-Mule-DataWeave-Scripts-with-MUnit/">previous post</a> and change the output type to <code>application/json</code>.</p>
+<pre><code class="language-xml">&lt;context:property-placeholder location=&quot;munit-mailserver-demo.properties&quot; /&gt;
 
-<pre><code class="language-scala">%dw 1.0
-%output application/json
----
-payload.root.*employee map {
-
-		name: $.fname ++ ' ' ++ $.lname,
-		dob: $.dob,
-		age: (now as :string {format: &quot;yyyy&quot;}) -  
-				(($.dob as :date {format:&quot;MM-dd-yyyy&quot;}) as :string {format:&quot;yyyy&quot;})
-
-}
+    &lt;sub-flow name=&quot;subflow-mail-sender&quot;&gt;
+        &lt;set-variable variableName=&quot;emailSubject&quot; value=&quot;#['Welcome to UT']&quot; doc:name=&quot;Set Subject&quot;/&gt;
+        &lt;smtp:outbound-endpoint host=&quot;${email.host}&quot; port=&quot;${email.port}&quot; to=&quot;${email.to.addr}&quot; subject=&quot;#[flowVars.emailSubject]&quot; cc=&quot;${email.cc.addr}&quot; responseTimeout=&quot;10000&quot; doc:name=&quot;SMTP&quot; password=&quot;${email.password}&quot; user=&quot;${email.user}&quot;/&gt;
+    &lt;/sub-flow&gt;
 </code></pre>
 
-<h4 id="input-xml-payload">Input XML Payload:</h4>
+<h2 id="testing-simple-outbound-smtp">Testing Simple outbound SMTP</h2>
 
-<pre><code class="language-xml">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-&lt;root&gt;
-	&lt;employee&gt;
-		&lt;fname&gt;M1&lt;/fname&gt;
-		&lt;lname&gt;M2&lt;/lname&gt;
-		&lt;dob&gt;01-01-1980&lt;/dob&gt;
-	&lt;/employee&gt;
-	&lt;employee&gt;
-		&lt;fname&gt;A1&lt;/fname&gt;
-		&lt;lname&gt;A2&lt;/lname&gt;
-		&lt;dob&gt;12-23-1995&lt;/dob&gt;
-	&lt;/employee&gt;
-&lt;/root&gt;
+<h3 id="step-1-munit-mailserver-dependency">Step 1: MUnit MailServer dependency</h3>
+
+<p>Add below maven dependencies to maven project:</p>
+
+<pre><code class="language-xml">&lt;dependency&gt;
+  &lt;groupId&gt;com.mulesoft.munit.utils&lt;/groupId&gt;
+  &lt;artifactId&gt;munit-mailserver-module&lt;/artifactId&gt;
+  &lt;version&gt;1.1.0&lt;/version&gt;
+  &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;
+
+&lt;!-- We will be using assertj for assertions --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.assertj&lt;/groupId&gt;
+  &lt;artifactId&gt;assertj-core&lt;/artifactId&gt;
+  &lt;!-- use 2.8.0 for Java 7 projects --&gt;
+  &lt;version&gt;3.8.0&lt;/version&gt;
+  &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;
+
 </code></pre>
 
-<h4 id="expected-output">Expected output:</h4>
+<h3 id="step-2-initialising-mailserver-in-test-case">Step 2: Initialising MailServer in Test Case</h3>
 
-<pre><code class="language-json">[
-  {
-    &quot;name&quot;: &quot;M1 M2&quot;,
-    &quot;dob&quot;: &quot;01-01-1980&quot;,
-    &quot;age&quot;: 36
-  },
-  {
-    &quot;name&quot;: &quot;A1 A2&quot;,
-    &quot;dob&quot;: &quot;12-23-1995&quot;,
-    &quot;age&quot;: 21
-  }
-]
+<p>Add a class level property of mailServer. We will use JUnit&rsquo;s <code>@Before</code> and <code>@After</code> methods to start and stop the mail server.</p>
+
+<pre><code class="language-java">	private MailServer mailServer = new MailServer();
+
+	@Override
+	protected String getConfigResources() {
+		return &quot;munit-mailserver-demo.xml&quot;;
+	}
+
+	@Before
+	public void setUp(){
+		mailServer.start();
+	}
+
+	@After
+	public void tearDown(){
+		mailServer.stop();
+	}
+
 </code></pre>
 
-<h2 id="writing-munit-xml-test-case">Writing MUnit XML Test Case</h2>
+<h3 id="step-3-update-properties-files-for-local-smtp-settings">Step 3: Update Properties files for local SMTP settings</h3>
 
-<p>As we saw in previous post, output of DataWeave will be instance of WeaveOutputHandler class. Any transformer capable of consuming output streams can consume this output. As we are expecting json output, we will use <code>json-to-object-transformer</code> with a return class of <code>java.util.ArrayList</code>. Once we have the java list of json, we can validate any data elements. Here is out xml test case -</p>
+<p>Our actual flow uses an external properties file to load the placeholders like <code>email.host</code>, <code>email.port</code>, <code>email.to.addr</code> and <code>email.cc.addr</code>. Make a copy of <code>munit-mailserver-demo.properties</code> under src\test\resource.</p>
 
-<pre><code class="language-xml">    &lt;munit:test name=&quot;dataweave-testing-suite-jsonTest&quot; description=&quot;MUnit Test&quot;&gt;
-        &lt;munit:set payload=&quot;#[getResource('sample_data/employees.xml').asStream()]&quot; mimeType=&quot;application/xml&quot; doc:name=&quot;Set Message&quot;/&gt;
-        &lt;flow-ref name=&quot;dataweave-testingSub_Flow&quot; doc:name=&quot;dataweave-testingSub_Flow&quot;/&gt;
-        &lt;json:json-to-object-transformer returnClass=&quot;java.util.ArrayList&quot; doc:name=&quot;JSON to Object&quot;/&gt;
-        &lt;munit:assert-on-equals expectedValue=&quot;#[2]&quot; actualValue=&quot;#[payload.size()]&quot; doc:name=&quot;Assert Equals&quot;/&gt;
-        &lt;munit:assert-on-equals expectedValue=&quot;#[36]&quot; actualValue=&quot;#[payload[0].age]&quot; doc:name=&quot;Assert Equals&quot;/&gt;
-    &lt;/munit:test&gt;
+<p>MailServer uses GreenMail library to implement the SMTP server. It uses <a href="http://www.icegreen.com/greenmail/javadocs/com/icegreen/greenmail/util/ServerSetupTest.html">GreenMail&rsquo;s ServerSetupTest</a> configuration for setting up ports. So we will be using port 3025 for listening to the incoming mails.</p>
+
+<p>override the properties in test file as below -</p>
+
+<pre><code class="language-properties">email.to.addr=to@example.com
+email.cc.addr=cc@example.com
+
+email.host=localhost
+email.port=3025
+email.user=
+email.password=
 </code></pre>
 
-<p><strong>Note:</strong> It may also be possible to convert the DataWeave output to JSON string and then use <a href="https://docs.mulesoft.com/mule-user-guide/v/3.7/non-mel-expressions-configuration-reference#expression-evaluator-reference">JSON evaluator</a> for MEL Expression.</p>
+<h3 id="step-4-write-a-test-case">Step 4: Write a test case</h3>
 
-<h2 id="writing-java-junit-test-case">Writing Java JUnit Test Case</h2>
-
-<p>We can also use java to write our test case. Logic and steps will be similar to that of xml. Here is our java test case -</p>
+<p>Now let&rsquo;s write a java test case.</p>
 
 <pre><code class="language-java">@Test
-	public void testJsonOutput() throws Exception {
-		String payload = FileUtils.readFileToString(
-				new File(DataWeaveTests.class.getClassLoader().getResource(&quot;sample_data/employees.xml&quot;).getPath()));
+	public void shouldSendEmail() throws Exception{
+		String payload = &quot;Welcome to UnitTesters.com&quot;;
 
-		MuleEvent event = testEvent(payload);
-		((DefaultMuleMessage) event.getMessage()).setMimeType(MimeTypes.APPLICATION_XML);
+		MuleEvent muleEvent = testEvent(payload);
 
-		MuleEvent reply = runFlow(&quot;dataweave-testingSub_Flow&quot;, event);
+		runFlow(&quot;subflow-mail-sender&quot;, muleEvent);
 
-		//Create and initialise JSON to Object transformer. All below steps are required.
-		JsonToObject jto = new JsonToObject();
-		jto.setMuleContext(muleContext);
-		jto.setReturnDataType(DataTypeFactory.create(ArrayList.class, HashMap.class));
-		jto.initialise();
+		List&lt;MimeMessage&gt; mails = mailServer.getReceivedMessages();
 
+		assertThat(mails)
+			.isNotEmpty()
+			.hasSize(2);
 
-		List&lt;Map&gt; data = (List&lt;Map&gt;) jto.transform(reply.getMessage().getPayloadAsString(), reply);
+		assertThat(mails)
+			.allSatisfy(mimeMessage -&gt; {
+						// Let's inspect our message
+						try {
+							String toAddr = MailUtils.mailAddressesToString(mimeMessage.getRecipients(RecipientType.TO));
+							String ccAddr = MailUtils.mailAddressesToString(mimeMessage.getRecipients(RecipientType.CC));
 
-		Assert.assertEquals(2, data.size());
-		Assert.assertEquals(36, data.get(0).get(&quot;age&quot;));
+							assertThat(toAddr).as(&quot;To Address&quot;).isEqualTo(&quot;to@example.com&quot;);
+							assertThat(ccAddr).as(&quot;CC Address&quot;).isEqualTo(&quot;cc@example.com&quot;);
+							assertThat(mimeMessage.getSubject()).as(&quot;Subject&quot;).isEqualTo(&quot;Welcome to UT&quot;);
+							assertThat(mimeMessage.getContent().toString().trim()).as(&quot;Mail Body&quot;).isEqualTo(payload);
+
+						} catch (MessagingException | IOException e) {
+							fail(&quot;Unable to fetch data from Mail&quot;, e);
+						}
+					}
+				);
+
 	}
 </code></pre>
 
-<p><strong>Note:</strong> If you run into some error like &ldquo;more than one transformers found&rdquo; for getPayloadAsString() method, then try using  <code>ObjectToString</code> transformer to convert to dataweave output to String.</p>
+<p>This is what test case does:</p>
 
-<pre><code class="language-java">ObjectToString ots = new ObjectToString();
-		ots.setMuleContext(muleContext);
-		ots.initialise();
-		List&lt;Map&gt; data = (List&lt;Map&gt;) jto.transform(ots.transform(reply.getMessage().getPayload()), reply);
+<ol>
+<li>Call the flow under test with a test event.</li>
+<li>Get the list of mails received on our test email server. We will receive one email per email address in to and cc addresses. So we should be having 2 emails on the server. We verify that with assertions.</li>
+<li>Next, using <a href="http://joel-costigliola.github.io/assertj/">assertj&rsquo;s fluent assertions</a> , we will iterate through each message received and perform assertions to verify recipients, subject, mail body.</li>
+</ol>
+
+<p>This way, now we know what to expect from the SMTP component.</p>
+
+<h2 id="testing-mails-with-attachment">Testing Mails with Attachment</h2>
+
+<p>Using the similar techniques and assertj, we can verify the attachments on outbound emails. Let&rsquo;s consider below flow for testing -</p>
+
+<pre><code class="language-xml">&lt;sub-flow name=&quot;subflow-attachment-mail-sender&quot;&gt;
+        &lt;set-variable variableName=&quot;emailSubject&quot; value=&quot;#['Welcome to UT']&quot; doc:name=&quot;Set Subject&quot;/&gt;
+
+        &lt;set-attachment attachmentName=&quot;test.txt&quot; value=&quot;#[payload]&quot; contentType=&quot;text/plain&quot; doc:name=&quot;Attachment&quot; /&gt;
+
+        &lt;smtp:outbound-endpoint host=&quot;${email.host}&quot; port=&quot;${email.port}&quot; to=&quot;${email.to.addr}&quot; subject=&quot;#[flowVars.emailSubject]&quot; cc=&quot;${email.cc.addr}&quot; responseTimeout=&quot;10000&quot; doc:name=&quot;SMTP&quot; password=&quot;${email.password}&quot; user=&quot;${email.user}&quot;/&gt;
+    &lt;/sub-flow&gt;
 </code></pre>
 
-<p>And That&rsquo;s all about it, so simple :)</p>
+<p>Test case for this could look like below -</p>
 
-<p>Hope this helps to write safe code!</p>
+<pre><code class="language-java">@Test
+	public void shouldSendEmailWithAttachment() throws Exception{
+		String payload = &quot;Welcome to UnitTesters.com&quot;;
+
+		MuleEvent muleEvent = testEvent(payload);
+
+		runFlow(&quot;subflow-attachment-mail-sender&quot;, muleEvent);
+
+		List&lt;MimeMessage&gt; mails = mailServer.getReceivedMessages();
+
+		assertThat(mails)
+			.isNotEmpty()
+			.hasSize(2);
+
+		assertThat(mails)
+			.allSatisfy(mimeMessage -&gt; {
+						// Verify the attachment
+						try {
+
+							MimeBodyPart attachment = getAttachments(mimeMessage, &quot;test.txt&quot;);
+							assertThat(attachment).isNotNull();
+							assertThat(attachment.getContentType()).startsWith(&quot;text/plain&quot;);
+							assertThat(attachment.getContent().toString().trim()).isEqualTo(payload);
+
+							//Just to test non-existent attachment.
+							MimeBodyPart attachment2 = getAttachments(mimeMessage, &quot;test2.txt&quot;);
+							assertThat(attachment2).isNull();
+
+						} catch (MessagingException | IOException e) {
+							fail(&quot;Unable to fetch data from Mail&quot;, e);
+						}
+					}
+				);
+
+	}
+
+	public MimeBodyPart getAttachments(MimeMessage msg, String attchmentName) throws MessagingException, IOException{
+		Map&lt;String, Part&gt; attachments = new HashMap&lt;String, Part&gt;();
+		MailUtils.getAttachments((Multipart)msg.getContent(), attachments);
+
+		return (MimeBodyPart) attachments.get(attchmentName);
+
+	}
+</code></pre>
+
+<p>This is what test case does:</p>
+
+<ol>
+<li>Call the flow under test with a test event.</li>
+<li>Get the list of mails received on our test email server. Again we should recieve two emails on the server.</li>
+<li>Next, using <a href="http://joel-costigliola.github.io/assertj/">assertj&rsquo;s fluent assertions</a> , we extract the attachments and verify their presence, content, mime type etc.</li>
+</ol>
+
+<p>That was easy, right! Hope this helps you to test your SMTP flows in Mule.</p>
+
+<h2 id="source-code">Source code</h2>
+
+<p>Full source of this demo is available on Github <a href="https://github.com/UnitTesters/munit-mailserver-demo">here</a>. Feel free to download and take a look.</p>
+
+<h3 id="refernces">Refernces:</h3>
+
+<ul>
+<li><p><a href="https://docs.mulesoft.com/munit/v/1.3/">Munit</a></p></li>
+
+<li><p><a href="http://joel-costigliola.github.io/assertj/">AssertJ - Fluent Java Assertions</a></p></li>
+
+<li><p><a href="http://www.icegreen.com/greenmail/">GreenMail</a></p></li>
+</ul>
+
+<p>​</p>
+
+<p>Feel free to let me know your thoughts in comments and you can follow me on twitter <a href="https://twitter.com/manikmagar">@manikmagar</a> or <a href="https://twitter.com/unittesters">@UnitTesters</a>.</p>
 
     </div>
 
@@ -555,7 +661,7 @@ payload.root.*employee map {
                     
 
                     
-                        Category
+                        Categories
                     
                 
             </li>
@@ -566,19 +672,18 @@ payload.root.*employee map {
     
         <li><a href='/categories/MUnit'>MUnit</a></li>
     
+        <li><a href='/categories/JUnit'>JUnit</a></li>
+    
 </ul>
 
     </footer>
 </article>
 <ul class="actions pagination">
     
-        <li><a href="https://unittesters.com/blog/2016/07/24/overriding-properties-in-munit-xml-java-for-testing/"
-                class="button big previous">Overriding Properties in MUnit XML and Java for testing</a></li>
+        <li><a href="https://unittesters.com/blog/2016/09/27/Unit-Testing-DataWeave-JSON-Output-with-MUnit/"
+                class="button big previous">Unit Testing DataWeave JSON output</a></li>
     
 
-    
-        <li><a href="https://unittesters.com/blog/2017/05/mule-smtp-testing-with-munit-mailserver/"
-                class="button big next">Mule SMTP testing with MUnit MailServer Mock</a></li>
     
 </ul>
 
@@ -589,9 +694,9 @@ payload.root.*employee map {
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'unittesters';
-    var disqus_identifier = 'https:\/\/unittesters.com\/blog\/2016\/09\/27\/Unit-Testing-DataWeave-JSON-Output-with-MUnit\/';
-    var disqus_title = 'Unit Testing DataWeave JSON output';
-    var disqus_url = 'https:\/\/unittesters.com\/blog\/2016\/09\/27\/Unit-Testing-DataWeave-JSON-Output-with-MUnit\/';
+    var disqus_identifier = 'https:\/\/unittesters.com\/blog\/2017\/05\/mule-smtp-testing-with-munit-mailserver\/';
+    var disqus_title = 'Mule SMTP testing with MUnit MailServer Mock';
+    var disqus_url = 'https:\/\/unittesters.com\/blog\/2017\/05\/mule-smtp-testing-with-munit-mailserver\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

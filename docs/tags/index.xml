@@ -6,9 +6,28 @@
     <description>Recent content in Tags on UnitTesters.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 26 May 2017 19:00:00 -0400</lastBuildDate>
     
 	<atom:link href="https://unittesters.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AssertJ</title>
+      <link>https://unittesters.com/tags/AssertJ/</link>
+      <pubDate>Fri, 26 May 2017 19:00:00 -0400</pubDate>
+      
+      <guid>https://unittesters.com/tags/AssertJ/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SMTP</title>
+      <link>https://unittesters.com/tags/SMTP/</link>
+      <pubDate>Fri, 26 May 2017 19:00:00 -0400</pubDate>
+      
+      <guid>https://unittesters.com/tags/SMTP/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

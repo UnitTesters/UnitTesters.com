@@ -254,11 +254,11 @@ ga('send', 'pageview');
 
                 
                     <li>
-                        <a href="https://unittesters.com/blog/2016/09/27/Unit-Testing-DataWeave-JSON-Output-with-MUnit/"><p>Unit Testing DataWeave JSON output</p></a>
+                        <a href="https://unittesters.com/blog/2017/05/mule-smtp-testing-with-munit-mailserver/"><p>Mule SMTP testing with MUnit MailServer Mock</p></a>
                     </li>
                 
                     <li>
-                        <a href="https://unittesters.com/blog/2016/07/24/overriding-properties-in-munit-xml-java-for-testing/"><p>Overriding Properties in MUnit XML and Java for testing</p></a>
+                        <a href="https://unittesters.com/blog/2016/09/27/Unit-Testing-DataWeave-JSON-Output-with-MUnit/"><p>Unit Testing DataWeave JSON output</p></a>
                     </li>
                 
             </ul>
@@ -274,6 +274,79 @@ ga('send', 'pageview');
         
             
         
+
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="https://unittesters.com/blog/2017/05/mule-smtp-testing-with-munit-mailserver/">Mule SMTP testing with MUnit MailServer Mock</a></h2>
+        
+        
+            <p>Very often we use Mule SMTP connector in flows. How to ensure it is sending emails as expected? Let&#39;s write a test case for it.</p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-05-26'>
+            May 26, 2017</time>
+        <span class="author">Manik Magar</span>
+        
+            <p>4 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>Testing Mule SMTP using MUnit MailServer Mock We often use Mule SMTP connector in flows. But how to make sure that emails gets sent as expected?
+MUnit provides MailServer that we can use to mock real SMTP server and verify the mails sent by SMTP connector. Lets see how we can write munit test case for below subflow:
+&lt;context:property-placeholder location=&quot;munit-mailserver-demo.properties&quot; /&gt; &lt;sub-flow name=&quot;subflow-mail-sender&quot;&gt; &lt;set-variable variableName=&quot;emailSubject&quot; value=&quot;#[&lsquo;Welcome to UT&rsquo;]&quot; doc:name=&quot;Set Subject&quot;/&gt; &lt;smtp:outbound-endpoint host=&quot;${email.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="https://unittesters.com/blog/2017/05/mule-smtp-testing-with-munit-mailserver/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-sitemap">&nbsp;</i>
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/MUnit'>MUnit</a></li>
+    
+        <li><a href='/categories/JUnit'>JUnit</a></li>
+    
+</ul>
+
+    </footer>
+</article>
 
         
             <article class="post">
@@ -379,76 +452,6 @@ For demonstration purpose, we will have a flow that uses DataWeave to convert xm
     <footer>
         <ul class="actions">
             <li><a href="https://unittesters.com/blog/2016/07/24/overriding-properties-in-munit-xml-java-for-testing/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-
-                    
-                        <i class="fa fa-sitemap">&nbsp;</i>
-                    
-
-                    
-                        Category
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='/categories/MUnit'>MUnit</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="https://unittesters.com/blog/2016/07/20/Unit-Testing-Mule-DataWeave-Scripts-with-MUnit/">Unit Testing Mule DataWeave Scripts</a></h2>
-        
-        
-            <p>Mule DataWeave script can do complex transformations and so must be unit tested to ensure expected results. Let&#39;s see how to do it.</p>
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2016-07-20'>
-            July 20, 2016</time>
-        <span class="author">Manik Magar</span>
-        
-            <p>7 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>DataWeave is a powerful transformation language introduced with Mule Enterprise Edition 3.7. It allows you to transform data from one format to another and supports CSV, XML, JSON, Flat/Fixed Width (v3.8+) &amp; Java. You can look at these DataWeave Examples to see it in action.
-Like any other code of programming world, it is always a good idea to unit test the DataWeave script you write. In this post, we will see how we can unit test the DataWeave code.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="https://unittesters.com/blog/2016/07/20/Unit-Testing-Mule-DataWeave-Scripts-with-MUnit/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -600,13 +603,13 @@ Like any other code of programming world, it is always a good idea to unit test 
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://unittesters.com/blog/2016/09/27/Unit-Testing-DataWeave-JSON-Output-with-MUnit/">Unit Testing DataWeave JSON output</a></h3>
+                                <h3><a href="https://unittesters.com/blog/2017/05/mule-smtp-testing-with-munit-mailserver/">Mule SMTP testing with MUnit MailServer Mock</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2016-09-27'>
-                                    September 27, 2016</time>
+                                    '2017-05-26'>
+                                    May 26, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -614,13 +617,13 @@ Like any other code of programming world, it is always a good idea to unit test 
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://unittesters.com/blog/2016/07/24/overriding-properties-in-munit-xml-java-for-testing/">Overriding Properties in MUnit XML and Java for testing</a></h3>
+                                <h3><a href="https://unittesters.com/blog/2016/09/27/Unit-Testing-DataWeave-JSON-Output-with-MUnit/">Unit Testing DataWeave JSON output</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2016-07-24'>
-                                    July 24, 2016</time>
+                                    '2016-09-27'>
+                                    September 27, 2016</time>
                             </header>
                         </article>
                     </li>
@@ -659,7 +662,16 @@ Like any other code of programming world, it is always a good idea to unit test 
                         <article>
                             <header>
                                 <a href="/categories/MUnit/">MUnit</a>
-                                <span style="float:right;">4</span>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/JUnit/">JUnit</a>
+                                <span style="float:right;">1</span>
                             </header>
                         </article>
                     </li>
